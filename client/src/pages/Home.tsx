@@ -22,12 +22,12 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-[1400px] w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col">
-        <div className="flex flex-col lg:flex-row gap-8 flex-1">
+      <main className="flex-1 max-w-[1200px] w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+        <div className="flex flex-col lg:flex-row gap-12 flex-1 items-start justify-center">
           
           {/* Left: Card Preview */}
-          <div className="w-full lg:w-[400px] flex justify-center items-start shrink-0">
-            <div className="relative w-full max-w-[380px] aspect-[2.5/3.5] bg-gradient-to-b from-stone-700 to-stone-900 rounded-[1.5rem] p-4 shadow-2xl border-4 border-amber-600/80 flex flex-col">
+          <div className="w-full lg:w-[450px] flex justify-center items-start shrink-0">
+            <div className="relative w-full max-w-[420px] aspect-[2.5/3.5] bg-gradient-to-b from-stone-700 to-stone-900 rounded-[1.5rem] p-4 shadow-2xl border-4 border-amber-600/80 flex flex-col transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
               {/* Card Inner Frame */}
               <div className="border border-amber-500/50 rounded-xl p-3 flex-1 flex flex-col gap-3">
                 {/* Card Header */}
@@ -58,8 +58,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Center: Form */}
-          <div className="flex-1 flex flex-col gap-6 lg:px-8">
+          {/* Right: Form */}
+          <div className="flex-1 w-full max-w-[600px] flex flex-col gap-8">
             <div className="flex gap-2 p-1.5 bg-neutral-200 rounded-full w-fit mx-auto lg:mx-0 shadow-inner">
               <button
                 className={`px-8 py-2.5 rounded-full text-sm font-semibold transition-all ${mode === 'Template' ? 'bg-white shadow-md text-black scale-100' : 'text-neutral-500 hover:text-neutral-700 scale-95 hover:scale-100'}`}
@@ -75,72 +75,43 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200 space-y-5">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-neutral-700 font-bold">Name</Label>
-                <Input id="name" value={name} onChange={e => setName(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-11 text-lg" />
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-neutral-200 space-y-6">
+              <div className="space-y-3">
+                <Label htmlFor="name" className="text-neutral-700 font-bold text-base">Name</Label>
+                <Input id="name" value={name} onChange={e => setName(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-12 text-lg" />
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="cost" className="text-neutral-700 font-bold">Cost</Label>
-                  <Input id="cost" type="number" value={cost} onChange={e => setCost(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-11" />
+                <div className="space-y-3">
+                  <Label htmlFor="cost" className="text-neutral-700 font-bold text-base">Cost</Label>
+                  <Input id="cost" type="number" value={cost} onChange={e => setCost(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-12 text-lg" />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="level" className="text-neutral-700 font-bold">Level</Label>
-                  <Input id="level" type="number" value={level} onChange={e => setLevel(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-11" />
+                <div className="space-y-3">
+                  <Label htmlFor="level" className="text-neutral-700 font-bold text-base">Level</Label>
+                  <Input id="level" type="number" value={level} onChange={e => setLevel(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-12 text-lg" />
                 </div>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="atk" className="text-neutral-700 font-bold">ATK</Label>
-                <Input id="atk" type="number" value={atk} onChange={e => setAtk(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-11" />
+              <div className="space-y-3">
+                <Label htmlFor="atk" className="text-neutral-700 font-bold text-base">ATK</Label>
+                <Input id="atk" type="number" value={atk} onChange={e => setAtk(e.target.value)} className="bg-neutral-50 border-neutral-300 focus-visible:ring-black h-12 text-lg" />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="text" className="text-neutral-700 font-bold">Text / Description</Label>
+              <div className="space-y-3">
+                <Label htmlFor="text" className="text-neutral-700 font-bold text-base">Text / Description</Label>
                 <Textarea 
                   id="text" 
                   value={text} 
                   onChange={e => setText(e.target.value)} 
-                  className="bg-neutral-50 border-neutral-300 focus-visible:ring-black resize-none h-32 text-base leading-relaxed" 
+                  className="bg-neutral-50 border-neutral-300 focus-visible:ring-black resize-none h-40 text-base leading-relaxed" 
                 />
               </div>
             </div>
-          </div>
-
-          {/* Right: Thai Guide Panel */}
-          <div className="w-full lg:w-[350px] shrink-0">
-            <div className="border-2 border-neutral-200 rounded-2xl bg-white p-6 shadow-sm h-full relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-neutral-50 rounded-full translate-x-16 -translate-y-16"></div>
-              
-              <h3 className="text-2xl font-black mb-6 text-neutral-800 border-b-2 border-neutral-100 pb-4 relative z-10">วิธีใช้งาน</h3>
-              <div className="space-y-6 relative z-10">
-                {[
-                  "เลือกรูปแบบ Template หรือเปลี่ยนไปตั้งค่า Image สำหรับการ์ดของคุณ",
-                  "กำหนดชื่อของการ์ด (Name) ที่ต้องการแสดงบนส่วนหัว",
-                  "ใส่ค่าพลังงานที่ใช้ (Cost) และระดับ (Level) สำหรับระบบการเล่น",
-                  "กำหนดพลังโจมตี (ATK) สำหรับการ์ดใบนี้",
-                  "เขียนคำอธิบายความสามารถ (Text) เพื่ออธิบายกฎหรือเนื้อเรื่อง",
-                  "ตรวจสอบความถูกต้องและกดปุ่ม Export เพื่อบันทึกผลลัพธ์"
-                ].map((text, idx) => (
-                  <div key={idx} className="flex gap-4 group">
-                    <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center shrink-0 font-bold text-white shadow-md transition-transform group-hover:scale-110">
-                      {idx + 1}
-                    </div>
-                    <p className="text-neutral-600 font-medium leading-relaxed pt-1">
-                      {text}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            
+            {/* Export Button moved inside the form column for better balance */}
+            <div className="pt-4">
+              <Button className="w-full h-16 text-xl font-bold bg-black hover:bg-neutral-800 text-white rounded-2xl shadow-xl transition-all hover:-translate-y-1 active:scale-[0.98]">
+                Export
+              </Button>
             </div>
           </div>
-
-        </div>
-
-        {/* Bottom Export Button */}
-        <div className="mt-8 lg:mt-12 flex justify-center pb-8">
-           <Button className="w-full max-w-[400px] h-16 text-xl font-bold bg-black hover:bg-neutral-800 text-white rounded-2xl shadow-xl transition-all hover:-translate-y-1 active:scale-[0.98]">
-             Export
-           </Button>
         </div>
       </main>
     </div>
